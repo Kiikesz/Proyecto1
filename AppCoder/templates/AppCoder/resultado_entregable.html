@@ -1,0 +1,27 @@
+{% extends "AppCoder/padre.html" %}
+
+{% block titulo %}
+estas buscando el entregable con nombre: {{nombre}}.
+<p><br></p>
+{% for x in resultados %}
+<h4>
+<li style="color:white">>Nombre: {{x.nombre}}, Fecha: {{x.fecha}}, Entregado: {{x.entregado}} </li>
+</h4>
+{% endfor %}
+
+{% endblock %}
+
+{% block form %}
+<p><br></p>
+<p><br></p>
+<h2>
+<form action='{% url "resultado entregable" %}' method="GET" >
+    
+    <div style="text-align: center;">
+    <p style="color:white">deseas buscar otro entregable por nombre?</p> 
+    <input type="text" name="nombre">
+    <input type="submit" value="Buscar">
+</form>
+</h2>
+
+{% endblock %}

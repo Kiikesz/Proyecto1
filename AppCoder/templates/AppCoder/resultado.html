@@ -1,0 +1,29 @@
+{% extends "AppCoder/padre.html" %}
+
+{% block titulo %}
+estas buscando el nro de comision: {{comision}}.
+<p><br></p>
+<p><br></p>
+
+{% for x in resultados %}
+<h4>
+<li style="color:white">>Nombre: {{x.nombre}}, Camada: {{x.camada}}, Comisión: {{x.comision}} </li>
+</h4>
+{% endfor %}
+
+{% endblock %}
+
+{% block form %}
+<p><br></p>
+<p><br></p>
+<h2>
+<form action='{% url "resultado busqueda" %}' method="GET" >
+    
+    <div style="text-align: center;">
+    <p style="color:white">deseas buscar otra comision?</p> 
+    <input type="number" name="comision">
+    <input type="submit" value="Buscar">
+    </div>
+</form>
+</h2>
+{% endblock %}

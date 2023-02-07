@@ -1,0 +1,21 @@
+{% extends "AppCoder/padre.html" %}
+
+{% block titulo %}
+Acá se ven los estudiantes (buscalo por email).
+{% endblock %}
+
+
+{% block form %}
+
+<h2>
+    <form action='{% url "resultado estudiante" %}' method="GET" >
+        
+        <div style="text-align: center;">
+        <p style="color:white"></p> 
+        <input type="text" name="email">
+        <input type="submit" value="Buscar">
+        </div>
+    </form>
+</h2>
+
+{% endblock %}
